@@ -1,0 +1,11 @@
+<p>character works!</p>
+<div class="character-list">
+    <div *ngFor="let character of characterList" class="character-card">
+      <h2>{{ character.name }}</h2>
+      <p><strong>Status:</strong> {{ character.status }}</p>
+      <p><strong>Species:</strong> {{ character.species }}</p>
+      <p>Last know location:</p>
+      <p>{{character.location.name}}</p>
+    </div>
+</div>
+  
