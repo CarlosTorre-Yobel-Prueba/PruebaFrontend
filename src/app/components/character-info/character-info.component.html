@@ -1,0 +1,20 @@
+<div *ngIf="character" class="character-detail">
+    <button class="back-button" (click)="goCharacterList()">← Back</button>
+    <img [src]="character.image" alt="{{ character.name }}" class="character-image-detail">
+  
+    <div class="character-info-detail">
+      <h2>{{ character.name }}</h2>
+      <p><strong>Status:</strong> {{ character.status }}</p>
+      <p><strong>Species:</strong> {{ character.species }}</p>
+      <p><strong>Type:</strong> {{ character.type }}</p>
+      <p><strong>Gender:</strong> {{ character.gender }}</p>
+      <p><strong>Last known location:</strong></p>
+      <p>{{ character.locationName }}</p>
+      <p><strong>List of Episodes:</strong></p>
+      <div *ngFor="let epi of character.episode" class="character-card">
+        <span>{{epi}}</span>
+      </div>
+      <button (click)="downloadPdf()" class="download-pdf-button">Download PDF</button>
+    </div>
+  </div>
+  

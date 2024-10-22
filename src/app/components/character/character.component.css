@@ -142,5 +142,32 @@
     justify-content: center;
     margin: 20px;
   }
+
+
+  .home-button {
+    display: flex; 
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    border: none; 
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    right: 20px;
+    position: absolute;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
+
+.home-icon {
+    width: 20px; 
+    height: 20px;
+    margin-right: 5px;
+}
+
   
   

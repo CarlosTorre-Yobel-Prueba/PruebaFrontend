@@ -3,12 +3,16 @@
     <p>Cargando...</p>
   </div>
 
+<button *ngIf="!isLoading" class="home-button" (click)="goHome()">
+    🏠Home
+</button>
+
 <div class="filter-container" *ngIf="!isLoading">
     <input type="text" placeholder="Buscar personajes..." [(ngModel)]="filterText" (input)="filterCharacters()" class="filter-input"/>
   </div>
 
 <div class="character-list">
-    <div *ngFor="let character of filteredCharacterList" class="character-card">
+    <div *ngFor="let character of filteredCharacterList" class="character-card" [routerLink]="['/characters', character.id]">
       <img [src]="character.imageLink" alt="{{ character.name }}" class="character-image">
       
       <div class="character-info">

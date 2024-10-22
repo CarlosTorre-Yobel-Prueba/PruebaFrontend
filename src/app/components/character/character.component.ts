@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CharacterService } from './character.service';
 import { Character } from 'src/app/models/Character';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-character',
@@ -17,6 +18,7 @@ export class CharacterComponent implements OnInit{
 
   constructor(
     private characterService: CharacterService,
+    private router: Router,
   ){
 
   }
@@ -49,6 +51,10 @@ export class CharacterComponent implements OnInit{
 
 
     });
+  }
+
+  goHome() {
+    this.router.navigate(['/']);
   }
 
 
