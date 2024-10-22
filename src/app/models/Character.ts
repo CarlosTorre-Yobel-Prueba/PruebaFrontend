@@ -4,4 +4,6 @@ export interface Character {
     status: string;
     species: string;
     locationName: string;
+    firstEpisode: string;
+    imageLink: string;
 }

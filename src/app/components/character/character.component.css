@@ -1,23 +1,146 @@
 .character-list {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
     margin: 20px;
-  }
-  
-  .character-card {
+}
+
+.character-card {
+    display: flex; 
+    align-items: flex-start; 
     background-color: #f5f5f5;
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    transition: transform 0.3s; 
+  
+}
+
+.character-card:hover {
+    transform: scale(1.05); 
+}
+
+.character-image {
+    width: 180px;  
+    height: 180px;
+    border-radius: 30%; 
+    margin-right: 15px;
+}
+
+.character-info {
+    display: flex;
+    flex-direction: column;
+}
+  
+.character-card h2 {
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+}
+
+.character-card p {
+    margin: 4px 0;
+    font-size: 0.9rem;
+}
+
+
+.status-circle {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%; 
+    margin-left: 5px;
+}
+
+.live {
+    background-color: rgb(3, 233, 18);
+}
+
+.dead {
+    background-color: red; 
+}
+
+.unknown {
+    background-color: yellow;
+}
+
+
+.filter-container {
+    display: flex;
+    justify-content: center;  
+    margin-bottom: 20px; 
   }
   
-  .character-card h2 {
-    margin: 0 0 10px 0;
+  .filter-input {
+    width: 300px; 
+    padding: 10px 15px; 
+    border-radius: 25px; 
+    border: 1px solid #ccc; 
+    font-size: 16px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
   }
   
-  .character-card p {
-    margin: 5px 0;
+  .filter-input:focus {
+    outline: none; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 1px solid #6200ea; 
+    background-color: #f0f0f0;  
   }
+  
+  .filter-input::placeholder {
+    color: #888; 
+    font-style: italic; 
+  }
+  
+  .filter-input:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media (max-width: 600px) {
+    .filter-input {
+      width: 80%; 
+    }
+  }
+
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+  }
+  
+  .spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #6200ea;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .loading-container p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .character-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px;
+  }
+  
   

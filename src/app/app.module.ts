@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CharacterComponent } from './components/character/character.component';
+import { FormsModule } from '@angular/forms'; // Importar FormsModule
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { CharacterComponent } from './components/character/character.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

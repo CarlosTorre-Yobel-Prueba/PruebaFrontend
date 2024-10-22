@@ -1,11 +1,29 @@
-<p>character works!</p>
+<div *ngIf="isLoading" class="loading-container">
+    <div class="spinner"></div>
+    <p>Cargando...</p>
+  </div>
+
+<div class="filter-container" *ngIf="!isLoading">
+    <input type="text" placeholder="Buscar personajes..." [(ngModel)]="filterText" (input)="filterCharacters()" class="filter-input"/>
+  </div>
+
 <div class="character-list">
-    <div *ngFor="let character of characterList" class="character-card">
-      <h2>{{ character.name }}</h2>
-      <p><strong>Status:</strong> {{ character.status }}</p>
-      <p><strong>Species:</strong> {{ character.species }}</p>
-      <p>Last know location:</p>
-      <p>{{character.location.name}}</p>
+    <div *ngFor="let character of filteredCharacterList" class="character-card">
+      <img [src]="character.imageLink" alt="{{ character.name }}" class="character-image">
+      
+      <div class="character-info">
+        <h2>{{ character.name }}</h2>
+        <p><strong>Status:</strong>
+            <span class="status-circle" [ngClass]="{'live': character.status === 'Alive', 'dead': character.status === 'Dead', 'unknown': character.status === 'unknown'}"></span> 
+            {{ character.status }}
+        </p>
+        <p><strong>Species:</strong> {{ character.species }}</p>
+        <p><strong>Last known location:</strong></p>
+        <p>{{ character.locationName }}</p>
+        <p><strong>First seen in:</strong></p>
+        <p>{{ character.firstEpisode }}</p>
+      </div>
     </div>
-</div>
+  </div>
+  
   
